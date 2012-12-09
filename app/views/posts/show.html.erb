@@ -8,7 +8,12 @@
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
-
+<% if @post.address.present? %>
+  <p>
+    <strong>Location:</strong>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@post.latitude} #{@post.longitude}" %>
+  </p>
+<% end %>
 <p>
   <%= link_to "View All", posts_path %>
 </p>
