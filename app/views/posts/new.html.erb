@@ -1,0 +1,17 @@
+<%# title "New Post" %>
+
+<%= form_for @post do |f| %>
+  <%#= f.error_messages %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
+<p><%= link_to "Back to List", posts_path %></p>
