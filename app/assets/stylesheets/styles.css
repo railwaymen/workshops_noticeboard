@@ -73,3 +73,8 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+.size1 {font-size: 1.0em;}
+.size2 {font-size: 1.2em;}
+.size3 {font-size: 1.4em;}
+.size4 {font-size: 1.6em;}

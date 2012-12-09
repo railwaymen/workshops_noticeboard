@@ -1,4 +1,10 @@
 <% title link_to("Posts", posts_path) %>
+<div class="container">
+  <% tag_cloud(@tags, %w(size1 size2 size3 size4)) do |tag, css_class| %>
+    <%= link_to tag.name, posts_path(tag: tag.name), class: css_class %>
+  <% end %>
+</div>
+<hr />
 
 <% for post in @posts %>
   <div>

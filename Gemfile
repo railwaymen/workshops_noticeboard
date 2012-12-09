@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'nifty-generators', group: :development
 gem 'geocoder'
+gem 'acts-as-taggable-on'
 
 
 # To use ActiveModel has_secure_password

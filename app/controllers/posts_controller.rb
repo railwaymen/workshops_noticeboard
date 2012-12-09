@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @tags = Post.tag_counts_on(:tags)
+    @posts = if params[:tag]
+              Post.tagged_with(params[:tag])
+            else
+              Post.all
+            end
   end
 
   def show
