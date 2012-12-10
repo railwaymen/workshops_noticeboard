@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121209233217) do
+ActiveRecord::Schema.define(:version => 20121209234453) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -39,5 +39,15 @@ ActiveRecord::Schema.define(:version => 20121209233217) do
   create_table "tags", :force => true do |t|
     t.string "name"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "uid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "users", ["uid"], :name => "index_users_on_uid", :unique => true
 
 end

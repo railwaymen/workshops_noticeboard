@@ -24,6 +24,9 @@ gem 'jquery-rails'
 gem 'nifty-generators', group: :development
 gem 'geocoder'
 gem 'acts-as-taggable-on'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 
 # To use ActiveModel has_secure_password

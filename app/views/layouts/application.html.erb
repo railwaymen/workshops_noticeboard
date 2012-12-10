@@ -9,7 +9,17 @@
   </head>
   <body>
     <div class="container">
-      <p><%= link_to "New Post", new_post_path %></p>
+      <p>
+        <% if signed_in? %>
+          You are signed in as <%= current_user.name %>
+          (<%= current_user.email %>)<br />
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+          <br />
+          <%= link_to 'New Post', new_post_path %>
+        <% else %>
+          <%= link_to 'Sign in', user_omniauth_authorize_path(:facebook) %>
+        <% end %>
+      </p>
     </div>
     <div class="container">
       <% flash.each do |name, msg| %>
