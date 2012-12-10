@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create]
   def index
     @tags = Post.tag_counts_on(:tags)
     @posts = if params[:tag]
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = current_user.posts.build(params[:post])
     if @post.save
       redirect_to @post, :notice => "Successfully created post."
     else
